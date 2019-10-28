@@ -1,24 +1,32 @@
 #include <stdio.h>
-#include < iostream>
+#include <stdlib.h>
+#define TAM 40
 
-int main(){
-    string integrantes;
-    int i = 0, n = 0;
-    char nombre = ' ';
-    printf("Cuantos integrantes hay en tu equipo? ");
-    scanf("%d", &n);
-    printf("%d", i);
-    for (i = 0; i < n; i++){
-        printf("\nCuál es el nombre del integrante %d de tu equipo?", i+1);
-        scanf(" %c", &nombre);
-        integrantes[i] = nombre;
-        //gets(integrantes[i]);
+int main()
+{
+    int i,cant,tam;
+
+    printf("Cuantos integrantes hay en tu equipo?: ");
+    scanf("%d",&cant);
+    //printf("Ingresar el tamanio: ");
+    //scanf("%d",&tam);
+
+    char *arreglo[cant];
+    char *dato;
+
+    for(i=0; i<cant; i++){
+        printf("El nombre del alumno %i es: ",i+1);
+        dato = (char *) malloc(TAM);
+        //gets(dato);
+        //scanf("%[^\n]s", dato);
+        scanf("%s",dato);
+        arreglo[i] = dato;
     }
 
-    for (i = 0;i < n; i++){
-        printf("\nEl nombre del integrante %d es: %s", i+1, integrantes[i]);
+    printf("\nLos integrantes del equipo son: \n");
+    for(i=0; i<cant; i++){
+        printf(" %s\n",arreglo[i]);
     }
-
+    free(dato);
     return 0;
-
 }
