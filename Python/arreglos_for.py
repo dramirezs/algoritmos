@@ -1,6 +1,7 @@
 from numpy import array
 
-n = int(input("Cuantos integrantes tiene tu equipo? "))
+print("Cuantos integrantes tiene tu equipo? ")
+n = int(input())
 integrantes = []
 
 for i in range(n):
