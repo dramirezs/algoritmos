@@ -1,10 +1,12 @@
+//Librerias estandar
 #include <stdio.h>
 
+//Declaracion de funciones
 int encuentra_pares(int lista[], int limite);
 int listar(int lista[], int limite);
 int sumar_lista(int lista[], int limite);
 
-
+//Declaracion de variables Globales
 int i=0, j=0;
 int k = 0;
 int x = 0;
@@ -16,6 +18,7 @@ int main(){
     scanf("%d", &j);
     printf("\n");
 
+    //Declaracion de arreglo principal
     int numeros[j];
 
     for (i=0; i<j; i++){
@@ -32,17 +35,16 @@ int main(){
 
 }
 
+//Funciones
 int encuentra_pares(int lista[], int limite){
-
+    //Arreglos locales
     int pares[limite];
     int impares[limite];
 
     int par=0;
-
     i = 0;
 
     for (i=0;i<limite;i++) {
-        printf("%d-%d\n",i, lista[i]);
         par = lista[i] % 2;
         if (par == 0) {
             pares[k] = lista[i];
@@ -69,7 +71,6 @@ int listar(int lista[], int limite){
     for (i=0; i<=limite; i++){
         printf("%d\n", lista[i]);
     }
-
     return 0;
 }
 
@@ -78,6 +79,5 @@ int sumar_lista(int lista[], int limite) {
     for (i=0; i<=limite; i++){
         resultado = resultado + lista[i];
     }
-
     return resultado;
 }
